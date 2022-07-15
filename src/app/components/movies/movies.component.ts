@@ -27,12 +27,13 @@ export class MoviesComponent implements OnInit{
       distinct(),
       switchMap((searchTerm: string) => this.movieService.getMovies(searchTerm))
     ).subscribe((movies: Movie[]) => {
+      console.log(movies);
       this.movies = movies !== undefined ? movies : [];
     })
   }
 
 
-   ngOnDestroy() : void {
-    this.movieSubscription.unsubscribe();
-   }
+   //ngOnDestroy() : void {
+    //this.movieSubscription.unsubscribe();
+   //}
 }

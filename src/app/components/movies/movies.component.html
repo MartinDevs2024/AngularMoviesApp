@@ -1,13 +1,24 @@
-<div class="app">
-    <h1>List of Movies</h1>
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="text-center">Search For Any Movie</h1>
     <div class="search">
-      <input type="text" #movieSearchInput placeholder="Search for Movie">
+      <input
+        type="text"
+        class="form-control"
+        #movieSearchInput
+        placeholder="Search for Movie"
+      />
     </div>
-    <div *ngIf="movies.length > 0; else empty" class="container">
-        <app-card-movie *ngFor="let movie of movies" [movie]="movie"></app-card-movie>
-    </div>
-    <ng-template #empty class="empty">
-           <h3 class="text-white">Didnt find any Movies</h3>
-    </ng-template>
-
+  </div>
+</div>
+<div class="container">
+  <div *ngIf="movies.length > 0; else empty" class="container">
+    <app-card-movie
+      *ngFor="let movie of movies"
+      [movie]="movie"
+    ></app-card-movie>
+  </div>
+  <ng-template #empty class="empty">
+    <h3 class="text-white">Didnt find any Movies</h3>
+  </ng-template>
 </div>
